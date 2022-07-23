@@ -24,18 +24,19 @@ const Scheduler = () => {
                     {/* modal */}
                     <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                     <div className="modal modal-bottom sm:modal-middle">
-                        <div className="modal-box">
+                        <div className="modal-box relative">
+                            <label htmlFor="my-modal-6" className="btn btn-sm btn-primary absolute right-6 top-3">✕</label>
                             <h3 className="font-bold text-lg">Create Event</h3>
                             <hr />
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 {/* event name field */}
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Event name</span>
                                     </label>
                                     <input
                                         type="text"
-                                        className="input input-bordered input-sm w-full max-w-xs"
+                                        className="input input-bordered input-sm w-full"
                                         {...register("eventName", {
                                             required: {
                                                 value: true,
@@ -47,36 +48,36 @@ const Scheduler = () => {
                                 </div>
 
                                 {/* description field */}
-                                <div className="form-control w-full max-w-xs m-full">
+                                <div className="form-control w-full m-full">
                                     <label className="label">
                                         <span className="label-text">Description</span>
                                     </label>
                                     <textarea
                                         type="text"
-                                        className="input-bordered textarea w-full max-w-xs"
+                                        className="input-bordered textarea w-full"
                                         {...register("eventDescription")}
                                     />
                                 </div>
 
                                 {/* event date */}
                                 <div className="flex gap-3">
-                                    <div className="form-control w-full max-w-xs">
+                                    <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text">Date</span>
                                         </label>
                                         <input
                                             type="date"
-                                            className="input input-bordered input-sm w-full max-w-xs"
+                                            className="input input-bordered input-sm w-full"
                                             {...register("date")}
                                         />
                                     </div>
-                                    <div className="form-control w-full max-w-xs">
+                                    <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text">Time</span>
                                         </label>
                                         <input
                                             type="time"
-                                            className="input input-bordered input-sm w-full max-w-xs"
+                                            className="input input-bordered input-sm w-full"
                                             {...register("time")}
                                         />
                                     </div>
