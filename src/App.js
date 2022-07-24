@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
 import RequireAuth from './Components/RequireAuth';
+import Forum from './Pages/Forum';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
 import Scheduler from './Pages/Scheduler';
@@ -19,6 +20,16 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/scheduler" element={
+          <RequireAuth>
+            <Scheduler />
+          </RequireAuth>
+        }/>
+        <Route path="/forum" element={
+          <RequireAuth>
+            <Forum />
+          </RequireAuth>
+        }/>
+        <Route path="/announcement" element={
           <RequireAuth>
             <Scheduler />
           </RequireAuth>

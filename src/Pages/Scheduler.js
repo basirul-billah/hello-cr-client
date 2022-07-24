@@ -102,12 +102,9 @@ const Scheduler = () => {
                     <hr />
                     <div className="p-6">
                         <h1 className="text-lg font-bold">Events</h1>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
-                        <p>02:30 - Mathematical & Probabilistic Analysis</p>
+                        <p>10:30 - Software Engineering Sessional</p>
+                        <p>02:00 - Software Engineering</p>
+                        <p>02:30 - Pattern Recognition</p>
                     </div>
                 </div>
             </div>
