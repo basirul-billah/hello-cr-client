@@ -2,7 +2,7 @@ import React from 'react';
 import useNotice from '../hooks/useNotice';
 
 const Notice = ({ notice }) => {
-    const [setNotices] = useNotice();
+    const [notices, setNotices] = useNotice();
     const { _id, title, description } = notice;
 
     const handleDelete = _id => {
@@ -16,7 +16,7 @@ const Notice = ({ notice }) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = notice.filter(product => product._id !== _id);
+                    const remaining = notices.filter(notice => notice._id !== _id);
                     setNotices(remaining);
                 })
         }

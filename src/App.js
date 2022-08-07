@@ -24,17 +24,17 @@ function App() {
           <RequireAuth>
             <Scheduler />
           </RequireAuth>
-        }/>
+        } />
         <Route path="/forum" element={
           <RequireAuth>
             <Forum />
           </RequireAuth>
-        }/>
+        } />
         <Route path="/announcements" element={
           <RequireAuth>
             <Announcements />
           </RequireAuth>
-        }/>
+        } />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
