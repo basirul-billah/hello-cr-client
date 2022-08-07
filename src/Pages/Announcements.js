@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Notice from '../Components/Notice';
+import useNotice from '../hooks/useNotice';
 
 const Announcements = () => {
-    const [notices, setNotices] = useState([]);
-    const { register, handleSubmit } = useForm();
-
-    useEffect(() => {
-        fetch('http://localhost:5000/announcements')
-            .then(res => res.json())
-            .then(data => setNotices(data));
-    }, []);
+    const [notices] = useNotice();
+    const { register, handleSubmit, resetField } = useForm();
 
     const onSubmit = data => {
         const url = `http://localhost:5000/announcements`
@@ -24,6 +18,9 @@ const Announcements = () => {
         })
             .then(res => res.json())
             .then(res => console.log(res))
+
+        resetField("title");
+        resetField("description");
     };
 
     return (
@@ -50,12 +47,14 @@ const Announcements = () => {
                                 ...register("description", { required: true })
                                 }
                             />
-                            <input className='btn btn-primary' type="submit" value="POST" />
+                            <div className="modal-action">
+                                <input className='btn btn-primary w-full' type="submit" value="POST" />
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='flex flex-col-reverse'>
                 {
                     notices.map(notice => <Notice
                         key={notice._id}
