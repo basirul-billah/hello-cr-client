@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
 import RequireAuth from './Components/RequireAuth';
+import Announcements from './Pages/Announcements';
 import Forum from './Pages/Forum';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
@@ -10,7 +11,7 @@ import SignIn from './Pages/SignIn';
 
 function App() {
   return (
-    <div className='max-w-screen-2xl mx-auto'>
+    <div className='max-w-screen-2xl mx-auto bg-base-200 h-max'>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,9 +30,9 @@ function App() {
             <Forum />
           </RequireAuth>
         }/>
-        <Route path="/announcement" element={
+        <Route path="/announcements" element={
           <RequireAuth>
-            <Scheduler />
+            <Announcements />
           </RequireAuth>
         }/>
         <Route path="/register" element={<Register />} />
